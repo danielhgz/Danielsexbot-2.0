@@ -1,6 +1,6 @@
 # Danielsexbot-2.0
 
-A static Vercel-ready web app that showcases stylized feminine avatars inspired by language and cultural regions, then delivers playful multilingual insults on demand with animated speaking portraits.
+A static Vercel-ready web app that showcases stylized feminine avatars inspired by language and cultural regions, then delivers multilingual economics and cryptocurrency roasts on demand with animated speaking portraits.
 
 ## Run locally
 

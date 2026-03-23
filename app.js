@@ -5,7 +5,7 @@ const personas = [
     label: "Naomi, London Noir",
     region: "London-inspired styling",
     description:
-      "Tailored glamour, polished gold accents, and the kind of composure that makes a weak excuse sound even weaker.",
+      "Tailored glamour, polished gold accents, and the kind of composure that can turn a shaky market thesis into a public humiliation.",
     palette: {
       background: "linear-gradient(160deg, #dfccb9 0%, #a26f63 50%, #36242a 100%)",
       skin: "#c58a6c",
@@ -21,7 +21,7 @@ const personas = [
     label: "Valeria, CDMX Neon",
     region: "Mexico City-inspired styling",
     description:
-      "Glossy nightlife color, confident tailoring, and a fast-talking socialite energy sharpened for public embarrassment.",
+      "Glossy nightlife color, confident tailoring, and a fast-talking socialite energy sharpened for crypto delusion.",
     palette: {
       background: "linear-gradient(165deg, #f4c4a3 0%, #df6a5d 52%, #5f275e 100%)",
       skin: "#c98762",
@@ -37,7 +37,7 @@ const personas = [
     label: "Camille, Paris Tailored",
     region: "Paris-inspired styling",
     description:
-      "Structured elegance, immaculate posture, and a gaze that suggests your self-confidence was a clerical error.",
+      "Structured elegance, immaculate posture, and a gaze that suggests your inflation take belongs in a museum of bad judgment.",
     palette: {
       background: "linear-gradient(160deg, #ead3c3 0%, #bb7c6c 46%, #402730 100%)",
       skin: "#f0c6aa",
@@ -53,7 +53,7 @@ const personas = [
     label: "Layla, Beirut Saffron",
     region: "Beirut-inspired styling",
     description:
-      "Warm evening tones, statement jewelry, and a poised delivery designed for elegant destruction.",
+      "Warm evening tones, statement jewelry, and a poised delivery designed for elegant market destruction.",
     palette: {
       background: "linear-gradient(160deg, #f1c680 0%, #ca7d4c 44%, #5c2f2b 100%)",
       skin: "#c6875a",
@@ -69,7 +69,7 @@ const personas = [
     label: "Aiko, Tokyo Lacquer",
     region: "Tokyo-inspired styling",
     description:
-      "Lacquer-dark shine, precise styling, and a composed expression that makes your chaos look even louder.",
+      "Lacquer-dark shine, precise styling, and a composed expression that makes your trading chaos look even louder.",
     palette: {
       background: "linear-gradient(160deg, #f3d6cc 0%, #c96459 42%, #541d29 100%)",
       skin: "#f0c6aa",
@@ -85,7 +85,7 @@ const personas = [
     label: "Sanne, Amsterdam Glass",
     region: "Amsterdam-inspired styling",
     description:
-      "Clean lines, cool confidence, and a brutally calm expression that suits efficient insults.",
+      "Clean lines, cool confidence, and a brutally calm expression that suits efficient financial mockery.",
     palette: {
       background: "linear-gradient(160deg, #d9d6cf 0%, #8ca3a1 42%, #2c394f 100%)",
       skin: "#d7a98a",
@@ -105,9 +105,9 @@ const languages = [
     voiceLocales: ["en-GB", "en-US", "en"],
     roasts: [
       {
-        text: "You type like every sentence lost a custody battle with common sense.",
-        translation: "Direct meaning: your messages sound embarrassingly confused.",
-        context: "Personal, contemporary, and aimed at the user's behavior rather than identity.",
+        text: "You explain inflation like you met one graph and built a personality around it.",
+        translation: "Direct meaning: your economics takes sound shallow and overconfident.",
+        context: "Personal, contemporary, and built around bad macro commentary.",
       },
       {
         text: "You talk about macroeconomics like a podcast thumbnail learned to type.",
@@ -115,9 +115,9 @@ const languages = [
         context: "Sharper and more personal, focused on performative economics talk and bad analysis.",
       },
       {
-        text: "You are not mysterious. You are what happens when overconfidence forgets to prepare.",
-        translation: "Direct meaning: you act impressive, but the act falls apart quickly.",
-        context: "Cold, direct, and built to puncture ego.",
+        text: "Your crypto strategy looks like three buzzwords in a trench coat pretending to be due diligence.",
+        translation: "Direct meaning: your investing logic is flimsy and performative.",
+        context: "Cold, direct, and built to puncture fake conviction around crypto.",
       },
     ],
   },
@@ -128,9 +128,9 @@ const languages = [
     voiceLocales: ["es-ES", "es-MX", "es-US", "es"],
     roasts: [
       {
-        text: "Tienes cara de mandar 'hola perdida' y luego no saber que decir.",
-        translation: "English: You look like the type to send 'hey stranger' and then have nothing to say.",
-        context: "Specific to bad DM behavior, with a mocking social tone.",
+        text: "Hablas de recesion como si repetir titulares fuera analisis.",
+        translation: "English: You talk about recession as if repeating headlines were analysis.",
+        context: "Specific to shallow economics talk, with a mocking social tone.",
       },
       {
         text: "Hablas de criptomonedas como si perder dinero te diera autoridad.",
@@ -138,9 +138,9 @@ const languages = [
         context: "Stylish contempt aimed at crypto posturing and empty conviction.",
       },
       {
-        text: "Hablas con una seguridad que tu criterio no puede mantener.",
-        translation: "English: You speak with a confidence your judgment cannot support.",
-        context: "Clean, personal, and built around exposed delusion.",
+        text: "Tu portafolio suena exactamente como una apuesta vestida de vocabulario financiero.",
+        translation: "English: Your portfolio sounds exactly like a gamble dressed up in financial vocabulary.",
+        context: "Clean, personal, and built around exposed delusion in investing talk.",
       },
     ],
   },
@@ -156,14 +156,14 @@ const languages = [
         context: "Personal and polished, targeting loud certainty built on flimsy economic analysis.",
       },
       {
-        text: "Tu veux etre troublant, mais tu es surtout previsible.",
-        translation: "English: You want to be unsettling, but mostly you're predictable.",
-        context: "Measured contempt that cuts through a performative persona.",
+        text: "Tu parles de crypto comme si la volatilite etait une preuve d'intelligence.",
+        translation: "English: You talk about crypto as if volatility were proof of intelligence.",
+        context: "Measured contempt aimed at performative crypto sophistication.",
       },
       {
-        text: "Le plus impressionnant chez toi, c'est la distance entre ton ego et la realite.",
-        translation: "English: The most impressive thing about you is the distance between your ego and reality.",
-        context: "Elegant, direct, and ideal for a clean public takedown.",
+        text: "Le plus impressionnant chez toi, c'est la distance entre ton ego et ton rendement.",
+        translation: "English: The most impressive thing about you is the distance between your ego and your returns.",
+        context: "Elegant, direct, and ideal for a clean financial takedown.",
       },
     ],
   },
@@ -174,19 +174,19 @@ const languages = [
     voiceLocales: ["ar-SA", "ar-AE", "ar"],
     roasts: [
       {
-        text: "inta btfakker halak mohem, bas kel klamak copy paste",
-        translation: "English gloss: You think you're important, but everything you say feels copy-paste.",
-        context: "Transliterated for UI readability, with the insult aimed at fake originality.",
+        text: "inta بتحكي عن el iqtisad kello k2anno thread men wa7ad ma bya3ref y2ra arqam",
+        translation: "English gloss: You talk about economics like a thread from someone who cannot read numbers.",
+        context: "Transliterated for UI readability, aimed at fake economic authority.",
       },
       {
-        text: "ya zalameh, hatta th2tak bnafsak bedda th2a",
-        translation: "English gloss: Man, even your confidence needs confidence.",
-        context: "Short and rhythmic, landing on overconfidence and public embarrassment.",
+        text: "ya zalameh, crypto advice taba3ak bya3mel panic aktar men el sou2",
+        translation: "English gloss: Man, your crypto advice causes more panic than the market.",
+        context: "Short and rhythmic, landing on bad crypto judgment and public embarrassment.",
       },
       {
-        text: "kol ma tehki aktar, kol ma bein enno ma fi shi jowatak",
-        translation: "English gloss: The more you talk, the clearer it gets there's nothing behind it.",
-        context: "Personal and escalating, focused on exposed emptiness rather than identity.",
+        text: "kol ma tehki aktar 3an el istithmar, kol ma bein enno ma fi khitta aslan",
+        translation: "English gloss: The more you talk about investing, the clearer it gets there was never a plan.",
+        context: "Personal and escalating, focused on exposed emptiness in investment talk.",
       },
     ],
   },
@@ -197,19 +197,19 @@ const languages = [
     voiceLocales: ["ja-JP", "ja"],
     roasts: [
       {
-        text: "Kimi no messeeji wa tsuyoki na no ni, naka mi ga sukkarakan da ne.",
-        translation: "English: Your messages sound bold, but they're empty inside.",
-        context: "Personal and composed, focused on the gap between tone and substance.",
+        text: "Kimi no keizai no hanashi, grafu wo mite kashikoku natta ki ni natteiru dake da ne.",
+        translation: "English: Your economics talk is just you feeling smart after looking at a chart.",
+        context: "Personal and composed, focused on the gap between market jargon and substance.",
       },
       {
-        text: "Jibun ni horeteru no wa wakaru kedo, sore de minna wa damasenai yo.",
-        translation: "English: I can see you're in love with yourself, but that doesn't fool everyone else.",
-        context: "Still calm on the surface, but far more personally humiliating.",
+        text: "Crypto ni kuwashii furi wo shiteiru kedo, sore tte takai jugyou ryou no gamburu da yo ne.",
+        translation: "English: You act like you're knowledgeable about crypto, but it's really just expensive gambling.",
+        context: "Still calm on the surface, but far more personally humiliating in a crypto context.",
       },
       {
-        text: "Mysterious no tsumori kamo shirenai kedo, tada setsumei busoku na dake.",
-        translation: "English: Maybe you're trying to seem mysterious, but really you're just underdeveloped.",
-        context: "Precise, modern, and aimed at a familiar dating-app persona.",
+        text: "Kimi no toushi senryaku wa fukuzatsu janai, setsumei dekinaidake.",
+        translation: "English: Your investment strategy is not sophisticated, you just can't explain it.",
+        context: "Precise, modern, and aimed at fake sophistication in investing.",
       },
     ],
   },
@@ -220,19 +220,19 @@ const languages = [
     voiceLocales: ["nl-NL", "nl-BE", "nl"],
     roasts: [
       {
-        text: "Jij klinkt als iemand die zichzelf interessant vindt omdat niemand anders dat doet.",
-        translation: "English: You sound like someone who finds himself interesting because nobody else does.",
-        context: "Direct, personal, and built around ego with no backup.",
+        text: "Jij praat over economie alsof een podcastsamenvatting hetzelfde is als inzicht.",
+        translation: "English: You talk about economics as if a podcast summary were the same thing as insight.",
+        context: "Direct, personal, and built around ego with no analytical backup.",
       },
       {
-        text: "Je profiel straalt precies genoeg zelfvertrouwen uit om direct vermoeiend te zijn.",
-        translation: "English: Your profile gives off exactly enough confidence to become tiring immediately.",
-        context: "Targeted at platform behavior, with a flat Dutch delivery.",
+        text: "Jouw cryptovertrouwen klinkt alsof verlies voor jou gewoon branding is.",
+        translation: "English: Your crypto confidence sounds like losses are just branding to you.",
+        context: "Targeted at crypto behavior, with a flat Dutch delivery.",
       },
       {
-        text: "Hoe langer je praat, hoe duidelijker het wordt dat je vooral volume hebt.",
-        translation: "English: The longer you talk, the clearer it gets that volume is all you have.",
-        context: "Efficient and personal, aimed at empty swagger.",
+        text: "Hoe langer je over beleggen praat, hoe duidelijker het wordt dat je vooral gokken bedoelt.",
+        translation: "English: The longer you talk about investing, the clearer it gets you really mean gambling.",
+        context: "Efficient and personal, aimed at empty swagger in finance talk.",
       },
     ],
   },
@@ -353,17 +353,17 @@ function updateVoiceOptions(preferredVoiceName) {
   const language = getLanguageById(languageSelect.value);
   const matchingVoices = availableVoices.filter((voice) => isVoiceMatch(voice, language));
   const femaleVoices = matchingVoices.filter(isLikelyFemaleVoice);
-  const voicesToRender = femaleVoices.length > 0 ? femaleVoices : matchingVoices;
+  const voicesToRender = femaleVoices;
 
   clearSelect(voiceSelect);
 
   if (voicesToRender.length === 0) {
     const option = document.createElement("option");
     option.value = "";
-    option.textContent = `No ${language.label} voices available in this browser`;
+    option.textContent = `No female ${language.label} voices available in this browser`;
     voiceSelect.appendChild(option);
     voiceSelect.disabled = true;
-    setVoiceStatus(`No ${language.label} speech voice is currently available on this device.`);
+    setVoiceStatus(`No female-labelled ${language.label} speech voice is currently available on this device.`);
     return;
   }
 
@@ -376,13 +376,7 @@ function updateVoiceOptions(preferredVoiceName) {
     voicesToRender[0];
 
   voiceSelect.value = selectedVoice.name;
-
-  if (femaleVoices.length > 0) {
-    setVoiceStatus(`${femaleVoices.length} likely female ${language.label} voice${femaleVoices.length === 1 ? "" : "s"} ready.`);
-    return;
-  }
-
-  setVoiceStatus(`Using the available ${language.label} voice set because no clearly female-labelled option was found.`);
+  setVoiceStatus(`${femaleVoices.length} likely female ${language.label} voice${femaleVoices.length === 1 ? "" : "s"} ready.`);
 }
 
 function loadVoices() {
