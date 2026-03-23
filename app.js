@@ -110,8 +110,8 @@ const languages = [
         context: "Personal, contemporary, and aimed at the user's behavior rather than identity.",
       },
       {
-        text: "Your profile has the energy of a man who says 'trust me' right before making things worse.",
-        translation: "Direct meaning: you project instant bad judgment.",
+        text: "Your profile has the energy of someone who rehearses charm and still lands on awkward.",
+        translation: "Direct meaning: you project effort without self-awareness.",
         context: "Sharper and more personal, focused on platform persona and bad decision-making.",
       },
       {
@@ -133,8 +133,8 @@ const languages = [
         context: "Specific to bad DM behavior, with a mocking social tone.",
       },
       {
-        text: "Eres el tipo de problema que llega peinado y aun asi decepciona.",
-        translation: "English: You're the kind of problem that arrives well-groomed and still disappoints.",
+        text: "Eres el tipo de problema que llega peinado y aun asi decepciona a todos.",
+        translation: "English: You're the kind of problem that arrives well-groomed and still disappoints everyone.",
         context: "Stylish contempt aimed at presentation and substance.",
       },
       {
@@ -151,8 +151,8 @@ const languages = [
     voiceLocales: ["fr-FR", "fr-CA", "fr"],
     roasts: [
       {
-        text: "Tu as l'assurance d'un homme qui n'a jamais relu ses propres messages.",
-        translation: "English: You have the confidence of a man who has never reread his own messages.",
+        text: "Tu as l'assurance de quelqu'un qui n'a jamais relu ses propres messages.",
+        translation: "English: You have the confidence of someone who has never reread their own messages.",
         context: "Personal and polished, targeting the user's embarrassingly high self-regard.",
       },
       {
@@ -425,6 +425,52 @@ function renderPortrait(persona) {
             stroke-width="10"
             stroke-linecap="round"
           />
+        </g>
+        <g class="muse-gesture" aria-hidden="true">
+          <path
+            class="muse-arm"
+            d="M292 342c30 4 54 22 67 48 11 23 15 47 18 67"
+            fill="none"
+            stroke="${skin}"
+            stroke-width="18"
+            stroke-linecap="round"
+          />
+          <g class="muse-hand">
+            <path
+              d="M350 384c8-12 23-16 36-11 11 4 18 15 18 27 0 13-8 24-20 29-17 7-38-1-44-19-3-9-1-18 10-26Z"
+              fill="${skin}"
+            />
+            <path
+              class="muse-finger"
+              d="M379 360c4-22 11-35 20-39 7-3 14 1 16 8 2 8-2 17-9 22-6 4-10 10-12 19"
+              fill="none"
+              stroke="${skin}"
+              stroke-width="14"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M366 378c-1-12 3-21 11-24 7-3 14 2 15 9 2 8-2 16-10 20"
+              fill="none"
+              stroke="${skin}"
+              stroke-width="11"
+              stroke-linecap="round"
+            />
+            <path
+              d="M354 389c-2-10 0-18 8-22 7-3 14 1 16 8 2 8-2 15-9 20"
+              fill="none"
+              stroke="${skin}"
+              stroke-width="10"
+              stroke-linecap="round"
+            />
+            <path
+              d="M350 401c-2-8-1-14 5-18 6-3 12 0 14 6 2 7-1 13-7 17"
+              fill="none"
+              stroke="${skin}"
+              stroke-width="9"
+              stroke-linecap="round"
+            />
+          </g>
         </g>
         <g class="muse-head">
           <path
