@@ -1,92 +1,98 @@
 const personas = [
   {
-    id: "mediterranean",
-    label: "Mediterranean Glow",
-    region: "Southern European-inspired styling",
+    id: "london-noir",
+    languageId: "english",
+    label: "Naomi, London Noir",
+    region: "London-inspired styling",
     description:
-      "Warm citrus tones, sculpted gold jewelry, and sunlit elegance with a dramatic silhouette.",
+      "Tailored glamour, polished gold accents, and the kind of composure that makes a weak excuse sound even weaker.",
     palette: {
-      background: "linear-gradient(160deg, #f2d6a2 0%, #dd8759 48%, #7f3929 100%)",
-      skin: "#dba57f",
-      hair: "#2d1b15",
-      garment: "#8a2f23",
-      accent: "#f6d58e",
-      shadow: "#8d5131",
+      background: "linear-gradient(160deg, #dfccb9 0%, #a26f63 50%, #36242a 100%)",
+      skin: "#c58a6c",
+      hair: "#22171c",
+      garment: "#4f2430",
+      accent: "#f1d2a3",
+      shadow: "#2f1820",
     },
   },
   {
-    id: "east-asia",
-    label: "Lacquer Night",
-    region: "East Asian-inspired styling",
+    id: "cdmx-neon",
+    languageId: "spanish",
+    label: "Valeria, CDMX Neon",
+    region: "Mexico City-inspired styling",
     description:
-      "Ink-dark hair, luminous florals, and a refined editorial silhouette grounded in deep crimson.",
+      "Glossy nightlife color, confident tailoring, and a fast-talking socialite energy sharpened for public embarrassment.",
     palette: {
-      background: "linear-gradient(165deg, #f5d9cb 0%, #c96d58 54%, #5e1e24 100%)",
+      background: "linear-gradient(165deg, #f4c4a3 0%, #df6a5d 52%, #5f275e 100%)",
+      skin: "#c98762",
+      hair: "#261818",
+      garment: "#214d8c",
+      accent: "#ffd36d",
+      shadow: "#6d3840",
+    },
+  },
+  {
+    id: "paris-tailored",
+    languageId: "french",
+    label: "Camille, Paris Tailored",
+    region: "Paris-inspired styling",
+    description:
+      "Structured elegance, immaculate posture, and a gaze that suggests your self-confidence was a clerical error.",
+    palette: {
+      background: "linear-gradient(160deg, #ead3c3 0%, #bb7c6c 46%, #402730 100%)",
       skin: "#f0c6aa",
-      hair: "#1f1214",
-      garment: "#b53a36",
-      accent: "#ffdca7",
-      shadow: "#6a2f31",
+      hair: "#201516",
+      garment: "#7a2f35",
+      accent: "#f7ddb0",
+      shadow: "#4a2830",
     },
   },
   {
-    id: "north-africa",
-    label: "Desert Saffron",
-    region: "North African-inspired styling",
+    id: "beirut-saffron",
+    languageId: "arabic",
+    label: "Layla, Beirut Saffron",
+    region: "Beirut-inspired styling",
     description:
-      "Saffron drapery, bold geometry, and a regal pose against a sandstorm sunset palette.",
+      "Warm evening tones, statement jewelry, and a poised delivery designed for elegant destruction.",
     palette: {
-      background: "linear-gradient(160deg, #f2cb83 0%, #d17d47 44%, #6c3e2a 100%)",
-      skin: "#c98557",
-      hair: "#251813",
-      garment: "#2d6a5b",
-      accent: "#ffd487",
-      shadow: "#77492e",
+      background: "linear-gradient(160deg, #f1c680 0%, #ca7d4c 44%, #5c2f2b 100%)",
+      skin: "#c6875a",
+      hair: "#241716",
+      garment: "#2f6c60",
+      accent: "#ffd58d",
+      shadow: "#6c4030",
     },
   },
   {
-    id: "afrodiaspora",
-    label: "Velvet Voltage",
-    region: "Afro-diasporic-inspired styling",
+    id: "tokyo-lacquer",
+    languageId: "japanese",
+    label: "Aiko, Tokyo Lacquer",
+    region: "Tokyo-inspired styling",
     description:
-      "Electric color blocking, commanding posture, and a jewel-toned nightclub energy.",
+      "Lacquer-dark shine, precise styling, and a composed expression that makes your chaos look even louder.",
     palette: {
-      background: "linear-gradient(160deg, #f4a673 0%, #a14c58 46%, #2c1634 100%)",
-      skin: "#6d3f32",
-      hair: "#181111",
-      garment: "#3f8c7c",
-      accent: "#f6c35e",
-      shadow: "#472632",
+      background: "linear-gradient(160deg, #f3d6cc 0%, #c96459 42%, #541d29 100%)",
+      skin: "#f0c6aa",
+      hair: "#1c1113",
+      garment: "#b43a37",
+      accent: "#ffdda8",
+      shadow: "#662f32",
     },
   },
   {
-    id: "south-asia",
-    label: "Monsoon Silk",
-    region: "South Asian-inspired styling",
+    id: "amsterdam-glass",
+    languageId: "dutch",
+    label: "Sanne, Amsterdam Glass",
+    region: "Amsterdam-inspired styling",
     description:
-      "Saturated jewel shades, fluid fabric, and a cinematic profile touched by monsoon light.",
+      "Clean lines, cool confidence, and a brutally calm expression that suits efficient insults.",
     palette: {
-      background: "linear-gradient(160deg, #f6c36d 0%, #dd7b56 38%, #6d2057 100%)",
-      skin: "#b87353",
-      hair: "#211516",
-      garment: "#175e74",
-      accent: "#ffd98f",
-      shadow: "#6b3a37",
-    },
-  },
-  {
-    id: "latina",
-    label: "Neon Fiesta",
-    region: "Latin American-inspired styling",
-    description:
-      "Confident waves, tropical contrast, and nightlife color with a vivid street-fashion edge.",
-    palette: {
-      background: "linear-gradient(160deg, #f6c084 0%, #e16056 40%, #5d2a5b 100%)",
-      skin: "#cb8a65",
-      hair: "#2f1f18",
-      garment: "#274b8c",
-      accent: "#ffd56a",
-      shadow: "#7e4a39",
+      background: "linear-gradient(160deg, #d9d6cf 0%, #8ca3a1 42%, #2c394f 100%)",
+      skin: "#d7a98a",
+      hair: "#3a2b25",
+      garment: "#30506d",
+      accent: "#f0d39e",
+      shadow: "#334050",
     },
   },
 ];
@@ -99,19 +105,19 @@ const languages = [
     voiceLocales: ["en-GB", "en-US", "en"],
     roasts: [
       {
-        text: "You absolute disaster in shoes.",
-        translation: "Direct meaning: a stylishly delivered insult for someone hopeless.",
-        context: "Sharp, dry, and theatrical without leaning on slurs.",
+        text: "You type like every sentence lost a custody battle with common sense.",
+        translation: "Direct meaning: your messages sound embarrassingly confused.",
+        context: "Personal, contemporary, and aimed at the user's behavior rather than identity.",
       },
       {
-        text: "I've seen abandoned shopping carts with more direction than you.",
-        translation: "Direct meaning: you seem wildly unfocused.",
-        context: "A sarcastic roast built on pure disappointment.",
+        text: "Your profile has the energy of a man who says 'trust me' right before making things worse.",
+        translation: "Direct meaning: you project instant bad judgment.",
+        context: "Sharper and more personal, focused on platform persona and bad decision-making.",
       },
       {
-        text: "You're not the main character. You're buffering.",
-        translation: "Direct meaning: you are lagging behind the moment.",
-        context: "Contemporary, petty, and annoyingly effective.",
+        text: "You are not mysterious. You are what happens when overconfidence forgets to prepare.",
+        translation: "Direct meaning: you act impressive, but the act falls apart quickly.",
+        context: "Cold, direct, and built to puncture ego.",
       },
     ],
   },
@@ -122,19 +128,19 @@ const languages = [
     voiceLocales: ["es-ES", "es-MX", "es-US", "es"],
     roasts: [
       {
-        text: "Eres un desastre con Wi-Fi.",
-        translation: "English: You're a disaster with Wi-Fi.",
-        context: "Modern and compact, with the insult landing on competence.",
+        text: "Tienes cara de mandar 'hola perdida' y luego no saber que decir.",
+        translation: "English: You look like the type to send 'hey stranger' and then have nothing to say.",
+        context: "Specific to bad DM behavior, with a mocking social tone.",
       },
       {
-        text: "Tienes la energía de una excusa mal inventada.",
-        translation: "English: You have the energy of a badly invented excuse.",
-        context: "Theatrical irritation, more mocking than cruel.",
+        text: "Eres el tipo de problema que llega peinado y aun asi decepciona.",
+        translation: "English: You're the kind of problem that arrives well-groomed and still disappoints.",
+        context: "Stylish contempt aimed at presentation and substance.",
       },
       {
-        text: "Ni el drama te queda bien.",
-        translation: "English: Even drama doesn't suit you.",
-        context: "Elegant contempt with fashion-magazine attitude.",
+        text: "Hablas con una seguridad que tu criterio no puede mantener.",
+        translation: "English: You speak with a confidence your judgment cannot support.",
+        context: "Clean, personal, and built around exposed delusion.",
       },
     ],
   },
@@ -145,19 +151,19 @@ const languages = [
     voiceLocales: ["fr-FR", "fr-CA", "fr"],
     roasts: [
       {
-        text: "Tu es fatiguant, meme quand tu te tais.",
-        translation: "English: You're exhausting, even when you're quiet.",
-        context: "Cold, concise, and devastatingly dismissive.",
+        text: "Tu as l'assurance d'un homme qui n'a jamais relu ses propres messages.",
+        translation: "English: You have the confidence of a man who has never reread his own messages.",
+        context: "Personal and polished, targeting the user's embarrassingly high self-regard.",
       },
       {
-        text: "Tu rates meme ton arrogance.",
-        translation: "English: You even fail at being arrogant.",
-        context: "A crisp roast that attacks performance, not identity.",
+        text: "Tu veux etre troublant, mais tu es surtout previsible.",
+        translation: "English: You want to be unsettling, but mostly you're predictable.",
+        context: "Measured contempt that cuts through a performative persona.",
       },
       {
-        text: "Quel dommage, tu avais l'air plus intelligent de loin.",
-        translation: "English: What a shame, you looked smarter from a distance.",
-        context: "Catwalk-grade contempt with a smirk attached.",
+        text: "Le plus impressionnant chez toi, c'est la distance entre ton ego et la realite.",
+        translation: "English: The most impressive thing about you is the distance between your ego and reality.",
+        context: "Elegant, direct, and ideal for a clean public takedown.",
       },
     ],
   },
@@ -168,19 +174,19 @@ const languages = [
     voiceLocales: ["ar-SA", "ar-AE", "ar"],
     roasts: [
       {
-        text: "ya zalameh, inta fashal biseer lahu sot",
-        translation: "English gloss: Man, you're failure with a voice.",
-        context: "Rendered in transliteration to keep the UI readable without Arabic font support.",
+        text: "inta btfakker halak mohem, bas kel klamak copy paste",
+        translation: "English gloss: You think you're important, but everything you say feels copy-paste.",
+        context: "Transliterated for UI readability, with the insult aimed at fake originality.",
       },
       {
-        text: "inta drama bila karizma",
-        translation: "English gloss: You're drama without charisma.",
-        context: "Short, musical, and perfect for a side-eye moment.",
+        text: "ya zalameh, hatta th2tak bnafsak bedda th2a",
+        translation: "English gloss: Man, even your confidence needs confidence.",
+        context: "Short and rhythmic, landing on overconfidence and public embarrassment.",
       },
       {
-        text: "law kan fi ja'izeh lil ihraj, inta btektosoh",
-        translation: "English gloss: If there were an award for embarrassment, you'd sweep it.",
-        context: "A showy insult that lands as comic humiliation.",
+        text: "kol ma tehki aktar, kol ma bein enno ma fi shi jowatak",
+        translation: "English gloss: The more you talk, the clearer it gets there's nothing behind it.",
+        context: "Personal and escalating, focused on exposed emptiness rather than identity.",
       },
     ],
   },
@@ -191,19 +197,19 @@ const languages = [
     voiceLocales: ["ja-JP", "ja"],
     roasts: [
       {
-        text: "Anata no hanashi wa nagai noni naka ga nai.",
-        translation: "English: You talk for a long time and say nothing.",
-        context: "Polite surface, ruthless core.",
+        text: "Kimi no messeeji wa tsuyoki na no ni, naka mi ga sukkarakan da ne.",
+        translation: "English: Your messages sound bold, but they're empty inside.",
+        context: "Personal and composed, focused on the gap between tone and substance.",
       },
       {
-        text: "Kakkotsukete mo, zannen wa kakusenai yo.",
-        translation: "English: Even if you act cool, you can't hide the disappointment.",
-        context: "Clean and understated, but it still twists the knife.",
+        text: "Jibun ni horeteru no wa wakaru kedo, sore de minna wa damasenai yo.",
+        translation: "English: I can see you're in love with yourself, but that doesn't fool everyone else.",
+        context: "Still calm on the surface, but far more personally humiliating.",
       },
       {
-        text: "Kimi wa majime ni hazukashii.",
-        translation: "English: You are sincerely embarrassing.",
-        context: "Blunt, compact, and almost too calm.",
+        text: "Mysterious no tsumori kamo shirenai kedo, tada setsumei busoku na dake.",
+        translation: "English: Maybe you're trying to seem mysterious, but really you're just underdeveloped.",
+        context: "Precise, modern, and aimed at a familiar dating-app persona.",
       },
     ],
   },
@@ -214,19 +220,19 @@ const languages = [
     voiceLocales: ["nl-NL", "nl-BE", "nl"],
     roasts: [
       {
-        text: "Jij bent echt een wandelende verkeerde beslissing.",
-        translation: "English: You are truly a walking bad decision.",
-        context: "Direct, dry, and wonderfully unsentimental.",
+        text: "Jij klinkt als iemand die zichzelf interessant vindt omdat niemand anders dat doet.",
+        translation: "English: You sound like someone who finds himself interesting because nobody else does.",
+        context: "Direct, personal, and built around ego with no backup.",
       },
       {
-        text: "Zelfs je chaos is middelmatig.",
-        translation: "English: Even your chaos is mediocre.",
-        context: "Short and mean in a very efficient way.",
+        text: "Je profiel straalt precies genoeg zelfvertrouwen uit om direct vermoeiend te zijn.",
+        translation: "English: Your profile gives off exactly enough confidence to become tiring immediately.",
+        context: "Targeted at platform behavior, with a flat Dutch delivery.",
       },
       {
-        text: "Je praat groot voor iemand met zoveel softwarefouten.",
-        translation: "English: You talk big for someone with this many software errors.",
-        context: "Tech-flavored contempt with local bluntness.",
+        text: "Hoe langer je praat, hoe duidelijker het wordt dat je vooral volume hebt.",
+        translation: "English: The longer you talk, the clearer it gets that volume is all you have.",
+        context: "Efficient and personal, aimed at empty swagger.",
       },
     ],
   },
@@ -333,6 +339,10 @@ function setVoiceStatus(message) {
 
 function getLanguageById(id) {
   return languages.find((item) => item.id === id);
+}
+
+function getPersonaByLanguageId(languageId) {
+  return personas.find((item) => item.languageId === languageId) ?? personas[0];
 }
 
 function getSelectedVoice() {
@@ -528,7 +538,7 @@ function speakRoast(roast = currentRoast) {
 
 function shuffleAll() {
   const language = randomItem(languages);
-  const persona = randomItem(personas);
+  const persona = getPersonaByLanguageId(language.id);
 
   languageSelect.value = language.id;
   personaSelect.value = persona.id;
@@ -542,9 +552,10 @@ populateSelect(languageSelect, languages, (item) => `${item.label} (${item.local
 populateSelect(personaSelect, personas, (item) => `${item.label} (${item.region})`);
 
 languageSelect.value = languages[0].id;
-personaSelect.value = personas[0].id;
+personaSelect.value = getPersonaByLanguageId(languages[0].id).id;
 
 languageSelect.addEventListener("change", () => {
+  personaSelect.value = getPersonaByLanguageId(languageSelect.value).id;
   updateVoiceOptions();
   renderSelection();
   speakRoast(roastCurrentSelection());
