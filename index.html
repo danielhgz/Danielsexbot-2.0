@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Roast Muse</title>
+    <meta
+      name="description"
+      content="A Vercel-ready multilingual roast app with stylized feminine avatars inspired by language and cultural regions."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">Stylized. Multilingual. Unapologetic.</p>
+        <div class="hero-copy">
+          <h1>Global Roast Muse</h1>
+          <p class="lede">
+            Pick a language and a heritage-inspired visual direction, then let a
+            digital muse roast you in her own voice.
+          </p>
+        </div>
+        <div class="hero-note">
+          <strong>Design note:</strong> these visuals are artistic interpretations,
+          not literal or authoritative representations of ethnicity.
+        </div>
+      </header>
+
+      <main class="grid">
+        <section class="panel controls-panel">
+          <div class="panel-header">
+            <p class="section-kicker">Build the scene</p>
+            <h2>Choose the muse</h2>
+          </div>
+
+          <label class="field">
+            <span>Language</span>
+            <select id="languageSelect" aria-label="Select language"></select>
+          </label>
+
+          <label class="field">
+            <span>Visual direction</span>
+            <select id="personaSelect" aria-label="Select visual direction"></select>
+          </label>
+
+          <div class="action-row">
+            <button id="roastButton" class="primary-button" type="button">
+              Roast Me
+            </button>
+            <button id="shuffleButton" class="ghost-button" type="button">
+              Shuffle Everything
+            </button>
+          </div>
+
+          <div class="meta-card">
+            <p class="meta-title">Current pairing</p>
+            <p id="pairingLabel" class="meta-value"></p>
+            <p id="pairingDescription" class="meta-description"></p>
+          </div>
+        </section>
+
+        <section class="panel stage-panel">
+          <div class="portrait-wrap">
+            <div class="portrait-card">
+              <div id="portrait" class="portrait" aria-hidden="true"></div>
+              <div class="portrait-glow"></div>
+            </div>
+            <div class="speech-card">
+              <p class="speech-label">Live insult transmission</p>
+              <blockquote id="roastText" class="roast-text"></blockquote>
+              <p id="roastTranslation" class="translation"></p>
+              <p id="roastContext" class="context"></p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
