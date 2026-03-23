@@ -234,7 +234,6 @@ const languages = [
 
 const languageSelect = document.getElementById("languageSelect");
 const personaSelect = document.getElementById("personaSelect");
-const voiceLanguageSelect = document.getElementById("voiceLanguageSelect");
 const voiceSelect = document.getElementById("voiceSelect");
 const speakButton = document.getElementById("speakButton");
 const stopButton = document.getElementById("stopButton");
@@ -341,7 +340,7 @@ function getSelectedVoice() {
 }
 
 function updateVoiceOptions(preferredVoiceName) {
-  const language = getLanguageById(voiceLanguageSelect.value);
+  const language = getLanguageById(languageSelect.value);
   const matchingVoices = availableVoices.filter((voice) => isVoiceMatch(voice, language));
   const femaleVoices = matchingVoices.filter(isLikelyFemaleVoice);
   const voicesToRender = femaleVoices.length > 0 ? femaleVoices : matchingVoices;
@@ -402,51 +401,63 @@ function renderPortrait(persona) {
         </linearGradient>
       </defs>
       <circle cx="210" cy="158" r="102" fill="${accent}" opacity="0.18" />
-      <path
-        d="M118 452c16-83 58-128 92-140h68c37 14 79 59 95 140Z"
-        fill="url(#garmentGradient)"
-      />
-      <path
-        d="M145 158c0-58 32-104 75-104 49 0 94 43 94 109 0 64-39 119-94 119-44 0-75-58-75-124Z"
-        fill="${skin}"
-      />
-      <path
-        d="M121 160c0-86 48-130 110-130 66 0 114 52 114 122 0 31-11 51-24 70-3-44-14-86-46-108-20-14-46-16-69-9-35 11-63 41-85 84-1-9 0-19 0-29Z"
-        fill="${hair}"
-      />
-      <path
-        d="M194 273c10 7 22 11 36 11 17 0 31-5 42-12-8 27-23 45-41 45-18 0-31-19-37-44Z"
-        fill="${skin}"
-        opacity="0.95"
-      />
-      <path
-        d="M168 181c13-13 28-15 43-8 14 7 22 6 39-3 14-8 31-6 46 10"
-        fill="none"
-        stroke="${hair}"
-        stroke-width="11"
-        stroke-linecap="round"
-      />
-      <path
-        d="M183 222c15 7 39 7 56-1"
-        fill="none"
-        stroke="#7e4338"
-        stroke-width="5"
-        stroke-linecap="round"
-      />
-      <circle cx="185" cy="198" r="6" fill="${hair}" />
-      <circle cx="252" cy="197" r="6" fill="${hair}" />
-      <path
-        d="M100 450c16-22 53-39 78-42 18 25 48 38 69 38 30 0 53-13 72-38 31 6 60 20 81 42"
-        fill="none"
-        stroke="${accent}"
-        stroke-opacity="0.42"
-        stroke-width="10"
-        stroke-linecap="round"
-      />
+      <g class="muse-shell">
+        <g class="muse-shoulders">
+          <path
+            d="M118 452c16-83 58-128 92-140h68c37 14 79 59 95 140Z"
+            fill="url(#garmentGradient)"
+          />
+          <path
+            d="M100 450c16-22 53-39 78-42 18 25 48 38 69 38 30 0 53-13 72-38 31 6 60 20 81 42"
+            fill="none"
+            stroke="${accent}"
+            stroke-opacity="0.42"
+            stroke-width="10"
+            stroke-linecap="round"
+          />
+        </g>
+        <g class="muse-head">
+          <path
+            d="M145 158c0-58 32-104 75-104 49 0 94 43 94 109 0 64-39 119-94 119-44 0-75-58-75-124Z"
+            fill="${skin}"
+          />
+          <path
+            d="M121 160c0-86 48-130 110-130 66 0 114 52 114 122 0 31-11 51-24 70-3-44-14-86-46-108-20-14-46-16-69-9-35 11-63 41-85 84-1-9 0-19 0-29Z"
+            fill="${hair}"
+          />
+          <path
+            d="M194 273c10 7 22 11 36 11 17 0 31-5 42-12-8 27-23 45-41 45-18 0-31-19-37-44Z"
+            fill="${skin}"
+            opacity="0.95"
+          />
+          <path
+            d="M168 181c13-13 28-15 43-8 14 7 22 6 39-3 14-8 31-6 46 10"
+            fill="none"
+            stroke="${hair}"
+            stroke-width="11"
+            stroke-linecap="round"
+          />
+          <ellipse class="muse-eye" cx="185" cy="198" rx="6" ry="6" fill="${hair}" />
+          <ellipse class="muse-eye" cx="252" cy="197" rx="6" ry="6" fill="${hair}" />
+          <ellipse
+            class="muse-mouth"
+            cx="215"
+            cy="223"
+            rx="18"
+            ry="5"
+            fill="#9b4b40"
+            opacity="0.95"
+          />
+        </g>
+      </g>
       <circle cx="118" cy="186" r="10" fill="${accent}" />
       <circle cx="319" cy="187" r="10" fill="${accent}" />
     </svg>
   `;
+}
+
+function setSpeakingState(isSpeaking) {
+  portraitCard.classList.toggle("is-speaking", isSpeaking);
 }
 
 function renderSelection() {
@@ -498,14 +509,17 @@ function speakRoast(roast = currentRoast) {
   utterance.rate = 0.95;
 
   utterance.onstart = () => {
+    setSpeakingState(true);
     setVoiceStatus(`Speaking with ${selectedVoice.name}.`);
   };
 
   utterance.onend = () => {
+    setSpeakingState(false);
     setVoiceStatus(`Finished speaking with ${selectedVoice.name}.`);
   };
 
   utterance.onerror = () => {
+    setSpeakingState(false);
     setVoiceStatus("Voice playback failed in this browser session.");
   };
 
@@ -526,20 +540,14 @@ function shuffleAll() {
 
 populateSelect(languageSelect, languages, (item) => `${item.label} (${item.locale})`);
 populateSelect(personaSelect, personas, (item) => `${item.label} (${item.region})`);
-populateSelect(voiceLanguageSelect, languages, (item) => `${item.label} vocals`);
 
 languageSelect.value = languages[0].id;
 personaSelect.value = personas[0].id;
-voiceLanguageSelect.value = languages[0].id;
 
 languageSelect.addEventListener("change", () => {
   updateVoiceOptions();
   renderSelection();
   speakRoast(roastCurrentSelection());
-});
-
-voiceLanguageSelect.addEventListener("change", () => {
-  updateVoiceOptions();
 });
 
 voiceSelect.addEventListener("change", () => {
@@ -561,6 +569,7 @@ stopButton.addEventListener("click", () => {
   }
 
   synth.cancel();
+  setSpeakingState(false);
   setVoiceStatus("Voice playback stopped.");
 });
 

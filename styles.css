@@ -285,6 +285,43 @@ select {
   animation: rise 700ms ease;
 }
 
+.portrait .muse-shell {
+  animation: museFloat 4.8s ease-in-out infinite;
+  transform-origin: center 58%;
+}
+
+.portrait .muse-head {
+  animation: museHeadTilt 5.4s ease-in-out infinite;
+  transform-origin: center 42%;
+}
+
+.portrait .muse-shoulders {
+  animation: museBreath 3.8s ease-in-out infinite;
+  transform-origin: center 72%;
+}
+
+.portrait .muse-mouth {
+  transform-origin: center;
+  animation: mouthIdle 4.2s ease-in-out infinite;
+}
+
+.portrait .muse-eye {
+  animation: eyeBlink 6.5s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.portrait-card.is-speaking .muse-mouth {
+  animation: mouthSpeak 280ms ease-in-out infinite alternate;
+}
+
+.portrait-card.is-speaking .muse-head {
+  animation: speakHeadTilt 820ms ease-in-out infinite alternate;
+}
+
+.portrait-card.is-speaking .muse-shoulders {
+  animation: speakShoulders 760ms ease-in-out infinite alternate;
+}
+
 .speech-card {
   padding: 20px;
   display: grid;
@@ -315,6 +352,95 @@ select {
   to {
     opacity: 1;
     transform: translateY(8px) scale(1);
+  }
+}
+
+@keyframes museFloat {
+  0%,
+  100% {
+    transform: translateY(8px);
+  }
+
+  50% {
+    transform: translateY(2px);
+  }
+}
+
+@keyframes museHeadTilt {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(-1.1deg) translateX(1px);
+  }
+}
+
+@keyframes museBreath {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(2px);
+  }
+}
+
+@keyframes mouthIdle {
+  0%,
+  100% {
+    transform: scaleX(1) scaleY(1);
+  }
+
+  50% {
+    transform: scaleX(1.03) scaleY(0.92);
+  }
+}
+
+@keyframes mouthSpeak {
+  from {
+    transform: scaleX(0.96) scaleY(0.72) translateY(-1px);
+  }
+
+  to {
+    transform: scaleX(1.08) scaleY(1.45) translateY(2px);
+  }
+}
+
+@keyframes speakHeadTilt {
+  from {
+    transform: rotate(-1.4deg) translateX(-1px);
+  }
+
+  to {
+    transform: rotate(1deg) translateX(1px);
+  }
+}
+
+@keyframes speakShoulders {
+  from {
+    transform: translateY(-1px);
+  }
+
+  to {
+    transform: translateY(3px);
+  }
+}
+
+@keyframes eyeBlink {
+  0%,
+  46%,
+  50%,
+  96%,
+  100% {
+    transform: scaleY(1);
+  }
+
+  48%,
+  98% {
+    transform: scaleY(0.08);
   }
 }
 
