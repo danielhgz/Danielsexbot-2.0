@@ -96,6 +96,7 @@ const languages = [
     id: "english",
     label: "English",
     locale: "UK / US bite",
+    voiceLocales: ["en-GB", "en-US", "en"],
     roasts: [
       {
         text: "You absolute disaster in shoes.",
@@ -118,6 +119,7 @@ const languages = [
     id: "spanish",
     label: "Spanish",
     locale: "Broad Latin flavor",
+    voiceLocales: ["es-ES", "es-MX", "es-US", "es"],
     roasts: [
       {
         text: "Eres un desastre con Wi-Fi.",
@@ -140,6 +142,7 @@ const languages = [
     id: "french",
     label: "French",
     locale: "Parisian sting",
+    voiceLocales: ["fr-FR", "fr-CA", "fr"],
     roasts: [
       {
         text: "Tu es fatiguant, meme quand tu te tais.",
@@ -162,6 +165,7 @@ const languages = [
     id: "arabic",
     label: "Arabic",
     locale: "Levantine-style delivery",
+    voiceLocales: ["ar-SA", "ar-AE", "ar"],
     roasts: [
       {
         text: "ya zalameh, inta fashal biseer lahu sot",
@@ -184,6 +188,7 @@ const languages = [
     id: "japanese",
     label: "Japanese",
     locale: "Cutting and composed",
+    voiceLocales: ["ja-JP", "ja"],
     roasts: [
       {
         text: "Anata no hanashi wa nagai noni naka ga nai.",
@@ -206,6 +211,7 @@ const languages = [
     id: "dutch",
     label: "Dutch",
     locale: "Straight-to-the-face",
+    voiceLocales: ["nl-NL", "nl-BE", "nl"],
     roasts: [
       {
         text: "Jij bent echt een wandelende verkeerde beslissing.",
@@ -228,6 +234,11 @@ const languages = [
 
 const languageSelect = document.getElementById("languageSelect");
 const personaSelect = document.getElementById("personaSelect");
+const voiceLanguageSelect = document.getElementById("voiceLanguageSelect");
+const voiceSelect = document.getElementById("voiceSelect");
+const speakButton = document.getElementById("speakButton");
+const stopButton = document.getElementById("stopButton");
+const voiceStatus = document.getElementById("voiceStatus");
 const roastButton = document.getElementById("roastButton");
 const shuffleButton = document.getElementById("shuffleButton");
 const pairingLabel = document.getElementById("pairingLabel");
@@ -237,6 +248,45 @@ const roastTranslation = document.getElementById("roastTranslation");
 const roastContext = document.getElementById("roastContext");
 const portrait = document.getElementById("portrait");
 const portraitCard = document.querySelector(".portrait-card");
+const synth = window.speechSynthesis;
+
+let availableVoices = [];
+let currentRoast = null;
+
+const femaleVoiceHints = [
+  "alice",
+  "allison",
+  "alva",
+  "amara",
+  "ana",
+  "ava",
+  "catherine",
+  "emma",
+  "female",
+  "fiona",
+  "joanna",
+  "karen",
+  "kendra",
+  "lisa",
+  "lucia",
+  "marie",
+  "martha",
+  "microsoft aria",
+  "microsoft ava",
+  "microsoft katja",
+  "moira",
+  "monica",
+  "nora",
+  "samantha",
+  "sara",
+  "serena",
+  "siri female",
+  "sofia",
+  "susan",
+  "tessa",
+  "victoria",
+  "zira",
+];
 
 function populateSelect(select, items, formatter) {
   items.forEach((item) => {
@@ -249,6 +299,94 @@ function populateSelect(select, items, formatter) {
 
 function randomItem(items) {
   return items[Math.floor(Math.random() * items.length)];
+}
+
+function populateVoiceSelect(select, voices) {
+  voices.forEach((voice) => {
+    const option = document.createElement("option");
+    option.value = voice.name;
+    option.textContent = describeVoice(voice);
+    select.appendChild(option);
+  });
+}
+
+function clearSelect(select) {
+  select.innerHTML = "";
+}
+
+function isVoiceMatch(voice, language) {
+  return language.voiceLocales.some((locale) => voice.lang.toLowerCase().startsWith(locale.toLowerCase()));
+}
+
+function isLikelyFemaleVoice(voice) {
+  const name = voice.name.toLowerCase();
+  return femaleVoiceHints.some((hint) => name.includes(hint));
+}
+
+function describeVoice(voice) {
+  const source = voice.localService ? "device" : "cloud";
+  return `${voice.name} (${voice.lang}, ${source})`;
+}
+
+function setVoiceStatus(message) {
+  voiceStatus.textContent = message;
+}
+
+function getLanguageById(id) {
+  return languages.find((item) => item.id === id);
+}
+
+function getSelectedVoice() {
+  return availableVoices.find((voice) => voice.name === voiceSelect.value) ?? null;
+}
+
+function updateVoiceOptions(preferredVoiceName) {
+  const language = getLanguageById(voiceLanguageSelect.value);
+  const matchingVoices = availableVoices.filter((voice) => isVoiceMatch(voice, language));
+  const femaleVoices = matchingVoices.filter(isLikelyFemaleVoice);
+  const voicesToRender = femaleVoices.length > 0 ? femaleVoices : matchingVoices;
+
+  clearSelect(voiceSelect);
+
+  if (voicesToRender.length === 0) {
+    const option = document.createElement("option");
+    option.value = "";
+    option.textContent = `No ${language.label} voices available in this browser`;
+    voiceSelect.appendChild(option);
+    voiceSelect.disabled = true;
+    setVoiceStatus(`No ${language.label} speech voice is currently available on this device.`);
+    return;
+  }
+
+  voiceSelect.disabled = false;
+  populateVoiceSelect(voiceSelect, voicesToRender);
+
+  const selectedVoice =
+    voicesToRender.find((voice) => voice.name === preferredVoiceName) ??
+    voicesToRender.find((voice) => voice.default) ??
+    voicesToRender[0];
+
+  voiceSelect.value = selectedVoice.name;
+
+  if (femaleVoices.length > 0) {
+    setVoiceStatus(`${femaleVoices.length} likely female ${language.label} voice${femaleVoices.length === 1 ? "" : "s"} ready.`);
+    return;
+  }
+
+  setVoiceStatus(`Using the available ${language.label} voice set because no clearly female-labelled option was found.`);
+}
+
+function loadVoices() {
+  if (!synth) {
+    voiceSelect.disabled = true;
+    speakButton.disabled = true;
+    stopButton.disabled = true;
+    setVoiceStatus("This browser does not support speech synthesis.");
+    return;
+  }
+
+  availableVoices = synth.getVoices().slice().sort((left, right) => left.name.localeCompare(right.name));
+  updateVoiceOptions(getSelectedVoice()?.name);
 }
 
 function renderPortrait(persona) {
@@ -312,7 +450,7 @@ function renderPortrait(persona) {
 }
 
 function renderSelection() {
-  const language = languages.find((item) => item.id === languageSelect.value);
+  const language = getLanguageById(languageSelect.value);
   const persona = personas.find((item) => item.id === personaSelect.value);
 
   pairingLabel.textContent = `${language.label} x ${persona.label}`;
@@ -322,12 +460,56 @@ function renderSelection() {
 }
 
 function roastCurrentSelection() {
-  const language = languages.find((item) => item.id === languageSelect.value);
+  const language = getLanguageById(languageSelect.value);
   const roast = randomItem(language.roasts);
+  currentRoast = roast;
 
   roastText.textContent = roast.text;
   roastTranslation.textContent = roast.translation;
   roastContext.textContent = roast.context;
+
+  return roast;
+}
+
+function speakRoast(roast = currentRoast) {
+  if (!synth) {
+    setVoiceStatus("Speech synthesis is not supported in this browser.");
+    return;
+  }
+
+  if (!roast) {
+    setVoiceStatus("Generate a roast first so the voice has something to say.");
+    return;
+  }
+
+  const selectedVoice = getSelectedVoice();
+
+  if (!selectedVoice) {
+    setVoiceStatus("Choose an available voice before starting playback.");
+    return;
+  }
+
+  synth.cancel();
+
+  const utterance = new SpeechSynthesisUtterance(roast.text);
+  utterance.voice = selectedVoice;
+  utterance.lang = selectedVoice.lang;
+  utterance.pitch = 1.15;
+  utterance.rate = 0.95;
+
+  utterance.onstart = () => {
+    setVoiceStatus(`Speaking with ${selectedVoice.name}.`);
+  };
+
+  utterance.onend = () => {
+    setVoiceStatus(`Finished speaking with ${selectedVoice.name}.`);
+  };
+
+  utterance.onerror = () => {
+    setVoiceStatus("Voice playback failed in this browser session.");
+  };
+
+  synth.speak(utterance);
 }
 
 function shuffleAll() {
@@ -338,23 +520,54 @@ function shuffleAll() {
   personaSelect.value = persona.id;
 
   renderSelection();
-  roastCurrentSelection();
+  updateVoiceOptions();
+  speakRoast(roastCurrentSelection());
 }
 
 populateSelect(languageSelect, languages, (item) => `${item.label} (${item.locale})`);
 populateSelect(personaSelect, personas, (item) => `${item.label} (${item.region})`);
+populateSelect(voiceLanguageSelect, languages, (item) => `${item.label} vocals`);
 
 languageSelect.value = languages[0].id;
 personaSelect.value = personas[0].id;
+voiceLanguageSelect.value = languages[0].id;
 
 languageSelect.addEventListener("change", () => {
+  updateVoiceOptions();
   renderSelection();
-  roastCurrentSelection();
+  speakRoast(roastCurrentSelection());
+});
+
+voiceLanguageSelect.addEventListener("change", () => {
+  updateVoiceOptions();
+});
+
+voiceSelect.addEventListener("change", () => {
+  const selectedVoice = getSelectedVoice();
+  if (selectedVoice) {
+    setVoiceStatus(`Selected ${selectedVoice.name} for spoken roasts.`);
+  }
 });
 
 personaSelect.addEventListener("change", renderSelection);
-roastButton.addEventListener("click", roastCurrentSelection);
+roastButton.addEventListener("click", () => {
+  speakRoast(roastCurrentSelection());
+});
 shuffleButton.addEventListener("click", shuffleAll);
+speakButton.addEventListener("click", () => speakRoast());
+stopButton.addEventListener("click", () => {
+  if (!synth) {
+    return;
+  }
+
+  synth.cancel();
+  setVoiceStatus("Voice playback stopped.");
+});
+
+if (synth) {
+  synth.addEventListener("voiceschanged", loadVoices);
+}
 
 renderSelection();
 roastCurrentSelection();
+loadVoices();
