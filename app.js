@@ -110,9 +110,9 @@ const languages = [
         context: "Personal, contemporary, and aimed at the user's behavior rather than identity.",
       },
       {
-        text: "Your profile has the energy of someone who rehearses charm and still lands on awkward.",
-        translation: "Direct meaning: you project effort without self-awareness.",
-        context: "Sharper and more personal, focused on platform persona and bad decision-making.",
+        text: "You talk about macroeconomics like a podcast thumbnail learned to type.",
+        translation: "Direct meaning: your financial takes sound loud, shallow, and second-hand.",
+        context: "Sharper and more personal, focused on performative economics talk and bad analysis.",
       },
       {
         text: "You are not mysterious. You are what happens when overconfidence forgets to prepare.",
@@ -133,9 +133,9 @@ const languages = [
         context: "Specific to bad DM behavior, with a mocking social tone.",
       },
       {
-        text: "Eres el tipo de problema que llega peinado y aun asi decepciona a todos.",
-        translation: "English: You're the kind of problem that arrives well-groomed and still disappoints everyone.",
-        context: "Stylish contempt aimed at presentation and substance.",
+        text: "Hablas de criptomonedas como si perder dinero te diera autoridad.",
+        translation: "English: You talk about cryptocurrencies as if losing money gave you authority.",
+        context: "Stylish contempt aimed at crypto posturing and empty conviction.",
       },
       {
         text: "Hablas con una seguridad que tu criterio no puede mantener.",
@@ -151,9 +151,9 @@ const languages = [
     voiceLocales: ["fr-FR", "fr-CA", "fr"],
     roasts: [
       {
-        text: "Tu as l'assurance de quelqu'un qui n'a jamais relu ses propres messages.",
-        translation: "English: You have the confidence of someone who has never reread their own messages.",
-        context: "Personal and polished, targeting the user's embarrassingly high self-regard.",
+        text: "Tu parles d'economie avec l'assurance de quelqu'un qui confond un graphique avec une revelation.",
+        translation: "English: You talk about economics with the confidence of someone who mistakes a chart for a revelation.",
+        context: "Personal and polished, targeting loud certainty built on flimsy economic analysis.",
       },
       {
         text: "Tu veux etre troublant, mais tu es surtout previsible.",
