@@ -312,43 +312,48 @@ select {
 
 .portrait .muse-gesture,
 .portrait .muse-hand,
-.portrait .muse-finger {
+.portrait .muse-finger,
+.portrait .muse-knuckle {
   transform-box: fill-box;
   transform-origin: center;
 }
 
 .portrait .muse-gesture {
-  opacity: 0.2;
-  transform: translate(22px, 18px) rotate(18deg) scale(0.86);
+  opacity: 0.06;
+  transform: translate(28px, 22px) rotate(24deg) scale(0.82);
   transition:
-    opacity 180ms ease,
-    transform 220ms ease;
+    opacity 220ms ease,
+    transform 260ms ease;
 }
 
 .portrait-card.is-speaking .muse-mouth {
-  animation: mouthSpeak 280ms ease-in-out infinite alternate;
+  animation: mouthSpeak 220ms ease-in-out infinite alternate;
 }
 
 .portrait-card.is-speaking .muse-head {
-  animation: speakHeadTilt 820ms ease-in-out infinite alternate;
+  animation: speakHeadTilt 980ms ease-in-out infinite alternate;
 }
 
 .portrait-card.is-speaking .muse-shoulders {
-  animation: speakShoulders 760ms ease-in-out infinite alternate;
+  animation: speakShoulders 920ms ease-in-out infinite alternate;
 }
 
 .portrait-card.is-speaking .muse-gesture {
   opacity: 1;
   transform: translate(0, 0) rotate(0deg) scale(1);
-  animation: speakGesture 560ms ease-in-out infinite alternate;
+  animation: speakGesture 740ms ease-in-out infinite alternate;
 }
 
 .portrait-card.is-speaking .muse-hand {
-  animation: handFlick 320ms ease-in-out infinite alternate;
+  animation: handFlick 680ms ease-in-out infinite alternate;
 }
 
 .portrait-card.is-speaking .muse-finger {
-  animation: fingerWag 260ms ease-in-out infinite alternate;
+  animation: fingerWag 620ms ease-in-out infinite alternate;
+}
+
+.portrait-card.is-speaking .muse-knuckle {
+  animation: knuckleShift 680ms ease-in-out infinite alternate;
 }
 
 .speech-card {
@@ -430,61 +435,71 @@ select {
 
 @keyframes mouthSpeak {
   from {
-    transform: scaleX(0.96) scaleY(0.72) translateY(-1px);
+    transform: scaleX(0.97) scaleY(0.78) translateY(-1px);
   }
 
   to {
-    transform: scaleX(1.08) scaleY(1.45) translateY(2px);
+    transform: scaleX(1.1) scaleY(1.58) translateY(2px);
   }
 }
 
 @keyframes speakHeadTilt {
   from {
-    transform: rotate(-1.4deg) translateX(-1px);
+    transform: rotate(-1.1deg) translateX(-1px);
   }
 
   to {
-    transform: rotate(1deg) translateX(1px);
+    transform: rotate(0.8deg) translateX(1px);
   }
 }
 
 @keyframes speakShoulders {
   from {
-    transform: translateY(-1px);
+    transform: translateY(0);
   }
 
   to {
-    transform: translateY(3px);
+    transform: translateY(2px);
   }
 }
 
 @keyframes speakGesture {
   from {
-    transform: translate(-2px, 1px) rotate(-2deg) scale(1);
+    transform: translate(-2px, 2px) rotate(-2deg) scale(0.995);
   }
 
   to {
-    transform: translate(5px, -5px) rotate(4deg) scale(1.03);
+    transform: translate(4px, -4px) rotate(3deg) scale(1.02);
   }
 }
 
 @keyframes handFlick {
   from {
-    transform: rotate(-3deg);
+    transform: rotate(-2deg) translateY(1px);
   }
 
   to {
-    transform: rotate(5deg);
+    transform: rotate(3deg) translateY(-1px);
   }
 }
 
 @keyframes fingerWag {
   from {
-    transform: rotate(-7deg);
+    transform: rotate(-2.5deg) translateX(0);
   }
 
   to {
-    transform: rotate(6deg);
+    transform: rotate(2deg) translateX(1px);
+  }
+}
+
+@keyframes knuckleShift {
+  from {
+    transform: translateX(0) translateY(0);
+  }
+
+  to {
+    transform: translateX(1px) translateY(-1px);
   }
 }
 

@@ -264,32 +264,56 @@ const femaleVoiceHints = [
   "alva",
   "amara",
   "ana",
+  "amira",
+  "amy",
+  "anna",
   "ava",
+  "bella",
+  "cora",
   "catherine",
+  "clara",
+  "elena",
   "emma",
+  "eva",
   "female",
   "fiona",
+  "helena",
+  "isabella",
+  "jenny",
   "joanna",
+  "julia",
   "karen",
   "kendra",
+  "luna",
   "lisa",
   "lucia",
+  "maddie",
   "marie",
   "martha",
   "microsoft aria",
   "microsoft ava",
+  "microsoft hazel",
   "microsoft katja",
+  "microsoft natasha",
+  "microsoft sonia",
   "moira",
   "monica",
   "nora",
+  "paulina",
+  "paula",
+  "salli",
   "samantha",
   "sara",
   "serena",
   "siri female",
   "sofia",
+  "sonia",
+  "stefanie",
   "susan",
   "tessa",
+  "veena",
   "victoria",
+  "zira desktop",
   "zira",
 ];
 
@@ -403,105 +427,216 @@ function renderPortrait(persona) {
           <stop offset="0%" stop-color="${garment}" />
           <stop offset="100%" stop-color="${shadow}" />
         </linearGradient>
+        <radialGradient id="skinLight" cx="42%" cy="30%" r="68%">
+          <stop offset="0%" stop-color="${accent}" stop-opacity="0.38" />
+          <stop offset="34%" stop-color="${skin}" />
+          <stop offset="100%" stop-color="${shadow}" stop-opacity="0.22" />
+        </radialGradient>
+        <radialGradient id="skinShade" cx="58%" cy="56%" r="48%">
+          <stop offset="0%" stop-color="${shadow}" stop-opacity="0" />
+          <stop offset="100%" stop-color="${shadow}" stop-opacity="0.22" />
+        </radialGradient>
+        <linearGradient id="hairGloss" x1="10%" y1="0%" x2="90%" y2="100%">
+          <stop offset="0%" stop-color="${hair}" />
+          <stop offset="40%" stop-color="${shadow}" />
+          <stop offset="100%" stop-color="${hair}" />
+        </linearGradient>
+        <linearGradient id="lipColor" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#b15f58" />
+          <stop offset="100%" stop-color="#7f3a3b" />
+        </linearGradient>
       </defs>
-      <circle cx="210" cy="158" r="102" fill="${accent}" opacity="0.18" />
+      <circle cx="210" cy="156" r="112" fill="${accent}" opacity="0.18" />
+      <ellipse cx="204" cy="402" rx="124" ry="34" fill="${shadow}" opacity="0.14" />
       <g class="muse-shell">
         <g class="muse-shoulders">
           <path
-            d="M118 452c16-83 58-128 92-140h68c37 14 79 59 95 140Z"
+            d="M100 454c19-89 66-139 112-148h66c49 14 90 60 108 148Z"
             fill="url(#garmentGradient)"
           />
           <path
-            d="M100 450c16-22 53-39 78-42 18 25 48 38 69 38 30 0 53-13 72-38 31 6 60 20 81 42"
+            d="M121 451c17-26 48-48 73-54 19 26 45 36 69 36 27 0 53-12 73-37 31 8 62 29 82 55"
             fill="none"
             stroke="${accent}"
-            stroke-opacity="0.42"
-            stroke-width="10"
+            stroke-opacity="0.34"
+            stroke-width="8"
+            stroke-linecap="round"
+          />
+          <path
+            d="M170 318c12 35 32 51 50 51 21 0 42-17 54-51"
+            fill="none"
+            stroke="${accent}"
+            stroke-opacity="0.2"
+            stroke-width="18"
             stroke-linecap="round"
           />
         </g>
         <g class="muse-gesture" aria-hidden="true">
           <path
             class="muse-arm"
-            d="M292 342c30 4 54 22 67 48 11 23 15 47 18 67"
+            d="M286 338c30 0 57 14 77 39 18 23 31 53 33 83"
             fill="none"
             stroke="${skin}"
-            stroke-width="18"
+            stroke-width="22"
             stroke-linecap="round"
           />
           <g class="muse-hand">
             <path
-              d="M350 384c8-12 23-16 36-11 11 4 18 15 18 27 0 13-8 24-20 29-17 7-38-1-44-19-3-9-1-18 10-26Z"
-              fill="${skin}"
+              d="M344 389c10-14 30-18 46-10 12 6 20 19 21 33 1 14-5 27-16 35-16 12-43 10-57-4-8-8-12-19-10-31 2-9 7-16 16-23Z"
+              fill="url(#skinLight)"
             />
             <path
-              class="muse-finger"
-              d="M379 360c4-22 11-35 20-39 7-3 14 1 16 8 2 8-2 17-9 22-6 4-10 10-12 19"
+              d="M372 341c0-22 4-38 12-49 7-9 17-13 26-9 8 4 12 12 12 22 0 9-4 17-11 22-7 6-11 13-11 24v24h-28Z"
+              fill="url(#skinLight)"
+            />
+            <path
+              class="muse-knuckle"
+              d="M353 398c10-8 20-11 29-9 8 2 12 8 13 16 1 10-4 19-14 24"
+              fill="none"
+              stroke="${shadow}"
+              stroke-opacity="0.28"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
+            <path
+              d="M344 397c1-9 6-17 14-22 8-5 17-4 23 2 6 6 7 16 3 24-4 8-11 14-20 18"
               fill="none"
               stroke="${skin}"
-              stroke-width="14"
+              stroke-width="12"
               stroke-linecap="round"
               stroke-linejoin="round"
             />
             <path
-              d="M366 378c-1-12 3-21 11-24 7-3 14 2 15 9 2 8-2 16-10 20"
-              fill="none"
-              stroke="${skin}"
-              stroke-width="11"
-              stroke-linecap="round"
-            />
-            <path
-              d="M354 389c-2-10 0-18 8-22 7-3 14 1 16 8 2 8-2 15-9 20"
+              d="M349 409c1-9 5-16 12-21 7-5 16-5 21 0 6 5 8 13 6 21-3 9-10 15-18 20"
               fill="none"
               stroke="${skin}"
               stroke-width="10"
               stroke-linecap="round"
             />
             <path
-              d="M350 401c-2-8-1-14 5-18 6-3 12 0 14 6 2 7-1 13-7 17"
+              d="M356 420c0-7 3-13 8-17 6-5 13-6 18-2 5 4 6 11 4 18-2 8-7 14-15 18"
               fill="none"
               stroke="${skin}"
               stroke-width="9"
               stroke-linecap="round"
             />
+            <path
+              d="M346 409c-3-11-1-20 7-27 6-6 15-9 22-8 8 2 13 8 14 16 1 8-2 15-8 22"
+              fill="none"
+              stroke="${skin}"
+              stroke-width="11"
+              stroke-linecap="round"
+            />
+            <path
+              class="muse-finger"
+              d="M387 342c0-26 6-47 18-60 8-10 19-13 28-9 8 3 13 12 13 23 1 13-4 24-12 31-8 8-12 16-12 28v46h-35Z"
+              fill="none"
+              stroke="${skin}"
+              stroke-width="18"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M405 349c5-17 13-27 24-30"
+              fill="none"
+              stroke="${shadow}"
+              stroke-opacity="0.16"
+              stroke-width="5"
+              stroke-linecap="round"
+            />
+            <path
+              d="M402 432c8-1 16-4 23-10"
+              fill="none"
+              stroke="${shadow}"
+              stroke-opacity="0.18"
+              stroke-width="4"
+              stroke-linecap="round"
+            />
+            <path
+              d="M345 415c6 15 18 23 35 25 15 2 29-2 42-12"
+              fill="url(#skinShade)"
+              opacity="0.75"
+            />
           </g>
         </g>
         <g class="muse-head">
           <path
-            d="M145 158c0-58 32-104 75-104 49 0 94 43 94 109 0 64-39 119-94 119-44 0-75-58-75-124Z"
+            d="M145 162c0-64 35-111 80-116 56-7 102 36 108 107 5 68-31 127-90 136-53 8-98-49-98-127Z"
+            fill="url(#skinLight)"
+          />
+          <path
+            d="M119 164c0-92 50-136 112-136 68 0 119 51 119 127 0 36-10 61-27 82-2-43-11-82-37-109-18-18-43-29-72-27-38 3-72 26-97 72-1-4-1-7-1-9Z"
+            fill="url(#hairGloss)"
+          />
+          <path
+            d="M170 171c12-10 26-16 42-17 15 0 29 3 40 10 16-10 34-14 51-11 18 3 32 12 43 25-8-28-20-52-38-67-21-18-47-24-74-19-56 9-93 57-101 112 9-13 22-24 37-33Z"
+            fill="url(#hairGloss)"
+            opacity="0.98"
+          />
+          <path
+            d="M193 285c12 8 26 12 40 12 16 0 31-5 43-13-7 25-23 45-43 47-21 2-35-15-40-46Z"
             fill="${skin}"
+            opacity="0.9"
           />
           <path
-            d="M121 160c0-86 48-130 110-130 66 0 114 52 114 122 0 31-11 51-24 70-3-44-14-86-46-108-20-14-46-16-69-9-35 11-63 41-85 84-1-9 0-19 0-29Z"
-            fill="${hair}"
-          />
-          <path
-            d="M194 273c10 7 22 11 36 11 17 0 31-5 42-12-8 27-23 45-41 45-18 0-31-19-37-44Z"
-            fill="${skin}"
-            opacity="0.95"
-          />
-          <path
-            d="M168 181c13-13 28-15 43-8 14 7 22 6 39-3 14-8 31-6 46 10"
+            d="M162 181c13-11 28-14 44-10 14 3 25 2 41-5 17-7 34-6 51 8"
             fill="none"
             stroke="${hair}"
-            stroke-width="11"
+            stroke-width="9"
             stroke-linecap="round"
           />
-          <ellipse class="muse-eye" cx="185" cy="198" rx="6" ry="6" fill="${hair}" />
-          <ellipse class="muse-eye" cx="252" cy="197" rx="6" ry="6" fill="${hair}" />
+          <path
+            d="M166 212c8-12 18-18 31-18 12 0 23 6 32 17-9 5-20 8-31 8-13 0-23-2-32-7Z"
+            fill="#f6eee8"
+            opacity="0.95"
+          />
+          <path
+            d="M233 211c9-12 19-18 32-18 12 0 23 6 33 17-10 6-21 8-33 8-12 0-23-2-32-7Z"
+            fill="#f6eee8"
+            opacity="0.95"
+          />
+          <ellipse class="muse-eye" cx="187" cy="210" rx="7" ry="8" fill="${hair}" />
+          <ellipse class="muse-eye" cx="255" cy="209" rx="7" ry="8" fill="${hair}" />
+          <circle cx="190" cy="207" r="1.6" fill="#ffffff" opacity="0.85" />
+          <circle cx="258" cy="206" r="1.6" fill="#ffffff" opacity="0.85" />
+          <path
+            d="M214 203c4 14 3 25-3 39 7 4 14 5 22 4"
+            fill="none"
+            stroke="${shadow}"
+            stroke-opacity="0.28"
+            stroke-width="3.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M195 253c12 5 24 8 38 8 16 0 30-3 42-10"
+            fill="none"
+            stroke="${shadow}"
+            stroke-opacity="0.2"
+            stroke-width="3"
+            stroke-linecap="round"
+          />
           <ellipse
             class="muse-mouth"
-            cx="215"
-            cy="223"
-            rx="18"
-            ry="5"
-            fill="#9b4b40"
-            opacity="0.95"
+            cx="220"
+            cy="258"
+            rx="22"
+            ry="7"
+            fill="url(#lipColor)"
+            opacity="0.94"
+          />
+          <path
+            d="M183 244c8 7 17 11 28 13"
+            fill="none"
+            stroke="${accent}"
+            stroke-opacity="0.24"
+            stroke-width="6"
+            stroke-linecap="round"
           />
         </g>
       </g>
-      <circle cx="118" cy="186" r="10" fill="${accent}" />
-      <circle cx="319" cy="187" r="10" fill="${accent}" />
+      <ellipse cx="125" cy="216" rx="7" ry="12" fill="${accent}" opacity="0.82" />
+      <ellipse cx="315" cy="216" rx="7" ry="12" fill="${accent}" opacity="0.82" />
     </svg>
   `;
 }
